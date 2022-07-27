@@ -1,2 +1,29 @@
-# Check_Prime
-Take integer N as input, and check whether N is prime or Not.  Print "Prime" if the number is prime else print "Not a Prime".  Note:- 1 is not a prime number.  Input Format  Single line Input  An integer value Constraints  1&lt;=N&lt;=10000  Output Format  Single Line Output  A string Showing "Prime" or "Not a Prime". Sample Input 0  29 Sample Output 0  Prime Sample Input 1  18 Sample Output 1  Not a Prime
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner s=new Scanner(System.in);
+        int a=s.nextInt();
+        int b=a/2,flag=0;
+        if(a==0 || a==1){
+            flag=1;
+        }
+        else{
+            for(int i=2;i<=b;i++){
+                if(a%i==0){
+                    flag=1;
+                    break;
+                }
+            }
+        }
+        if(flag==1){
+            System.out.println("Not a Prime");
+        }
+        else if(flag==0){
+            System.out.println("Prime");
+        }
+    }
+}
